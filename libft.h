@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
-// #include <string.h>
+#include <string.h>
 
 int		ft_atoi(char *str);
 void	ft_bzero(void *s, size_t n);

@@ -22,4 +22,5 @@ void	ft_putnbr_fd(int n, int fd)
 	while (send[i])
 		i++;
 	write(fd, send, i * sizeof(char));
+	free(send);
 }
