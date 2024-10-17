@@ -1,44 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhenin <mhenin@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/30 12:39:24 by mhenin            #+#    #+#             */
-/*   Updated: 2024/08/06 14:04:50 by mhenin           ###   ########.fr       */
+/*   Created: 2024/10/17 10:28:06 by mhenin            #+#    #+#             */
+/*   Updated: 2024/10/17 10:28:08 by mhenin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	get_len(char const *str)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int	i;
-
-	while (str[i])
-		i++;
-	return (i);
-}
-
-char	*ft_strjoin(char const *s1, char const *s2)
-{
-	char	*res;
 	int		i;
-	int		l;
-	int		s1_len;
-	int		s2_len;
+	char	*send;
 
 	i = 0;
-	l = 0;
-	s1_len = get_len(s1);
-	s2_len = get_len(s2);
-	res = malloc((s1_len + s2_len + 1) * sizeof(char));
-	while (s1[i])
-		res[l++] = s1[i++];
-	i = 0;
-	while (s2[i])
-		res[l++] = s2[i++];
-	res[l] = '\0';
-	return (res);
+	send = ft_itoa(n);
+	while (send[i])
+		i++;
+	write(fd, send, i * sizeof(char));
 }

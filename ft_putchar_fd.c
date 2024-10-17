@@ -1,44 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhenin <mhenin@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/30 12:39:24 by mhenin            #+#    #+#             */
-/*   Updated: 2024/08/06 14:04:50 by mhenin           ###   ########.fr       */
+/*   Created: 2024/10/17 10:17:51 by mhenin            #+#    #+#             */
+/*   Updated: 2024/10/17 10:17:52 by mhenin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	get_len(char const *str)
+void	ft_putchar_fd(char c, int fd)
 {
-	int	i;
-
-	while (str[i])
-		i++;
-	return (i);
-}
-
-char	*ft_strjoin(char const *s1, char const *s2)
-{
-	char	*res;
-	int		i;
-	int		l;
-	int		s1_len;
-	int		s2_len;
-
-	i = 0;
-	l = 0;
-	s1_len = get_len(s1);
-	s2_len = get_len(s2);
-	res = malloc((s1_len + s2_len + 1) * sizeof(char));
-	while (s1[i])
-		res[l++] = s1[i++];
-	i = 0;
-	while (s2[i])
-		res[l++] = s2[i++];
-	res[l] = '\0';
-	return (res);
+	write(fd, &c, sizeof(char));
 }
