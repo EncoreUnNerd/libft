@@ -23,11 +23,11 @@ char	*ft_strrchr(const char *str, int l)
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] == l)
+		if (str[i] == (char)l)
 			last = (char *)&str[i];
 		i++;
 	}
-	if (str[i] == l)
+	if ((char)l == '\0')
 		last = (char *)&str[i];
 	return (last);
 }

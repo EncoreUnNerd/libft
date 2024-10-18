@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	ft_toupper(char l)
+int	ft_toupper(int l)
 {
 	if (l >= 'a' && l <= 'z')
 	{
@@ -20,7 +20,3 @@ char	ft_toupper(char l)
 	}
 	return (l);
 }
-// int	main()
-// {
-// 	printf("%c", ft_toupper('h'));
-// }

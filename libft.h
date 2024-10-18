@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
-#include <string.h>
+# include <string.h>
 
 int		ft_atoi(char *str);
 void	ft_bzero(void *s, size_t n);
@@ -42,8 +42,8 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t n);
 char	*ft_strrchr(const char *str, int l);
 char	*ft_substr(char const *s, size_t start, size_t len);
-char	ft_tolower(char l);
-char	ft_toupper(char l);
+int		ft_tolower(int l);
+int		ft_toupper(int l);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
