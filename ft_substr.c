@@ -12,6 +12,16 @@
 
 #include "libft.h"
 
+void	alloue(char *res, int len, int start, int s_len)
+{
+	if (len == 0 || start >= s_len)
+		res = malloc(1 * sizeof(char));
+	else if (len > s_len || start + len > s_len)
+		res = malloc((s_len - start + 1) * sizeof(char));
+	else
+		res = malloc((len + 1) * sizeof(char));
+}
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	int		i;
@@ -24,12 +34,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	s_len = 0;
 	while (s[s_len])
 		s_len++;
-	if (len == 0 || start >= s_len)
-		res = malloc(1 * sizeof(char));
-	else if (len > s_len || start + len > s_len)
-		res = malloc((s_len - start + 1) * sizeof(char));
-	else
-		res = malloc((len + 1) * sizeof(char));
+	alloue(res, len, start, s_len);
 	if (!res)
 		return (NULL);
 	while (s[i] != '\0' && j < len)
