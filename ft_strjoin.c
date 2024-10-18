@@ -16,6 +16,7 @@ int	get_len(char const *str)
 {
 	int	i;
 
+	i = 0;
 	while (str[i])
 		i++;
 	return (i);
@@ -34,6 +35,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	s1_len = get_len(s1);
 	s2_len = get_len(s2);
 	res = malloc((s1_len + s2_len + 1) * sizeof(char));
+	if (!res)
+		return (NULL);
 	while (s1[i])
 		res[l++] = s1[i++];
 	i = 0;

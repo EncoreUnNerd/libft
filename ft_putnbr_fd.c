@@ -19,6 +19,11 @@ void	ft_putnbr_fd(int n, int fd)
 
 	i = 0;
 	send = ft_itoa(n);
+	if (!send)
+	{
+		free(send);
+		return;
+	}
 	while (send[i])
 		i++;
 	write(fd, send, i * sizeof(char));

@@ -57,6 +57,8 @@ char	*ft_itoa(int n)
 	}
 	l = n_len(big_n) + s;
 	res = (char *)malloc((l + 1) * sizeof(char));
+	if (!res)
+		return (NULL);
 	if (s == 1)
 		res[0] = '-';
 	put_in_char(l, s, big_n, res);

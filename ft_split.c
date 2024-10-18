@@ -39,12 +39,14 @@ int	how_many(char const *s, char c)
 	return (res);
 }
 
-void	attribute(char **res, int index, char const *s, int *cursors)
+int	attribute(char **res, int index, char const *s, int *cursors)
 {
 	int	i;
 
 	i = 0;
 	res[index] = (char *)malloc((cursors[1] - cursors[0] + 1) * sizeof(char));
+	if (!res)
+		return (1);
 	while (cursors[0] + i < cursors[1])
 	{
 		res[index][i] = s[cursors[0] + i];
@@ -52,6 +54,7 @@ void	attribute(char **res, int index, char const *s, int *cursors)
 	}
 	cursors[0] += i;
 	res[index][i] = '\0';
+	return (0);
 }
 
 char	**ft_split(char const *s, char c)
@@ -59,11 +62,13 @@ char	**ft_split(char const *s, char c)
 	char	**res;
 	int		i;
 	int		l;
+	int		e;
 	int		index;
 	int		cursors[2];
 
 	i = 0;
 	l = 0;
+	e = 0;
 	index = 0;
 	cursors[0] = 0;
 	cursors[1] = 0;
@@ -71,15 +76,15 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	res = (char **)malloc((how_many(s, c) + 1) * sizeof(char *));
 	if (!res)
-		return NULL;
+		return (NULL);
 	while (s[i])
 	{
 		if (s[i] == c)
 		{
 			if (l == 1)
 			{
-				attribute(res, index, s, cursors);
-				if (!res[index])
+				e = attribute(res, index, s, cursors);
+				if (e == 1)
 					return (NULL);
 				index++;
 			}
