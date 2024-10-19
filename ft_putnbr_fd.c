@@ -14,18 +14,14 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	int		i;
-	char	*send;
-
-	i = 0;
-	send = ft_itoa(n);
-	if (!send)
+	if (n < -9 || n > 9)
+		ft_putnbr_fd(n / 10, fd);
+	if (n < 0)
 	{
-		free(send);
-		return;
+		if (n >= -9)
+			ft_putchar_fd('-', fd);
+		ft_putchar_fd('0' - (n % 10), fd);
 	}
-	while (send[i])
-		i++;
-	write(fd, send, i * sizeof(char));
-	free(send);
+	else
+		ft_putchar_fd('0' + (n % 10), fd);
 }
