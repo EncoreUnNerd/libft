@@ -15,37 +15,24 @@
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned int		i;
-	unsigned char		*d;
 	const unsigned char	*s;
 
-	d = (unsigned char *)dest;
-	s = (const unsigned char *)src;
-	if (!s && !d)
+	if (!s && !dest)
 		return (NULL);
+	s = (const unsigned char *)src;
 	i = 0;
-	if (d < s)
+	if ((unsigned char *)dest < s)
 	{
 		while (i < n)
 		{
-			d[i] = s[i];
+			((unsigned char *)dest)[i] = s[i];
 			i++;
 		}
 	}
 	else
 	{
-		i = n;
-		while (i > 0)
-		{
-			d[i - 1] = s[i - 1];
-			i--;
-		}
+		while (n-- > 0)
+			((unsigned char *)dest)[n] = s[n];
 	}
 	return (dest);
 }
-
-// int main()
-// {
-// 	// char e[10] = "tete";
-// 	// char s[34] = 'lddl';
-// 	ft_memmove(NULL, NULL, 3);
-// }
