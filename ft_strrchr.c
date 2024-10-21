@@ -18,8 +18,6 @@ char	*ft_strrchr(const char *str, int l)
 	char	*last;
 
 	last = NULL;
-	if (str == NULL)
-		return (NULL);
 	i = 0;
 	while (str[i])
 	{

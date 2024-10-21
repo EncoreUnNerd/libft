@@ -17,8 +17,6 @@ char	*ft_strnstr(const char *big, const char *little, size_t n)
 	unsigned int	i;
 	unsigned int	j;
 
-	if (big == NULL || little == NULL)
-		return (NULL);
 	if (little[0] == '\0')
 		return ((char *)big);
 	i = 0;

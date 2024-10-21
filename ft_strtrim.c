@@ -12,16 +12,6 @@
 
 #include "libft.h"
 
-static int	get_len(char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
 int	is_in_set(char l, char *set)
 {
 	int	i;
@@ -45,7 +35,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	start = 0;
 	i = 0;
-	end = get_len((char *)s1) - 1;
+	end = ft_strlen((char *)s1) - 1;
 	while (is_in_set(s1[start], (char *)set))
 		start++;
 	while (is_in_set(s1[end], (char *)set) && end > start)

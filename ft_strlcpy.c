@@ -29,8 +29,6 @@ size_t	ft_strlcpy(char *dest, char *src, size_t size)
 	size_t	i;
 	size_t	src_len;
 
-	if (!dest || !src)
-		return (0);
 	src_len = get_len(src);
 	if (size == 0)
 		return (src_len);

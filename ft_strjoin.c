@@ -12,16 +12,6 @@
 
 #include "libft.h"
 
-static int	get_len(char const *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*res;
@@ -32,8 +22,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	l = 0;
-	s1_len = get_len(s1);
-	s2_len = get_len(s2);
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
 	res = malloc((s1_len + s2_len + 1) * sizeof(char));
 	if (!res)
 		return (NULL);

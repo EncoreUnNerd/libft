@@ -20,6 +20,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	d = (unsigned char *)dest;
 	s = (const unsigned char *)src;
+	if (!s && !d)
+		return (NULL);
 	i = 0;
 	if (d < s)
 	{
@@ -40,3 +42,10 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+
+// int main()
+// {
+// 	// char e[10] = "tete";
+// 	// char s[34] = 'lddl';
+// 	ft_memmove(NULL, NULL, 3);
+// }
