@@ -17,6 +17,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t n)
 	unsigned int	i;
 	unsigned int	j;
 
+	if (!big && n == 0)
+		return (NULL);
 	if (little[0] == '\0')
 		return ((char *)big);
 	i = 0;
@@ -35,5 +37,5 @@ char	*ft_strnstr(const char *big, const char *little, size_t n)
 }
 // int main()
 // {
-// 	ft_strnstr("j'aime les test", "te", 5);
+// 	ft_strnstr("test de fou", "ddasfsdf", 0);
 // }
