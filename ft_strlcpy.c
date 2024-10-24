@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static size_t	get_len(char *str)
+static size_t	get_len(const char *str)
 {
 	size_t	i;
 
@@ -24,7 +24,7 @@ static size_t	get_len(char *str)
 	return (i);
 }
 
-size_t	ft_strlcpy(char *dest, char *src, size_t size)
+size_t	ft_strlcpy(char *dest,const char *src, size_t size)
 {
 	size_t	i;
 	size_t	src_len;
