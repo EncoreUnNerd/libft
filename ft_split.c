@@ -34,7 +34,7 @@ static size_t	count_words(char const *s, char c)
 	return (count);
 }
 
-static char	*get_next_word(char const **s, char c)
+static char	*get_word(char const **s, char c)
 {
 	char	*word;
 	size_t	len;
@@ -64,7 +64,7 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	while (i < word_count)
 	{
-		res[i] = get_next_word(&s, c);
+		res[i] = get_word(&s, c);
 		if (!res[i])
 		{
 			while (i > 0)
