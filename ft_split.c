@@ -51,34 +51,34 @@ static char	*get_next_word(char const **s, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	char	**result;
+	char	**res;
 	size_t	word_count;
 	size_t	i;
 
 	if (!s)
 		return (NULL);
 	word_count = count_words(s, c);
-	result = (char **)malloc(sizeof(char *) * (word_count + 1));
-	if (!result)
+	res = (char **)malloc(sizeof(char *) * (word_count + 1));
+	if (!res)
 		return (NULL);
 	i = 0;
 	while (i < word_count)
 	{
-		result[i] = get_next_word(&s, c);
-		if (!result[i])
+		res[i] = get_next_word(&s, c);
+		if (!res[i])
 		{
 			while (i > 0)
-				free(result[--i]);
-			free(result);
+				free(res[--i]);
+			free(res);
 			return (NULL);
 		}
 		i++;
 	}
-	result[i] = NULL;
-	return (result);
+	res[i] = NULL;
+	return (res);
 }
 
 // int main()
 // {
-// 	char **res = ft_split("pipi,caca", ',');
+// 	char **res = ft_split("testenbien", 'e');
 // }
