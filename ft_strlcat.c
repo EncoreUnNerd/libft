@@ -20,11 +20,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 	i = 0;
 	src_l = ft_strlen(src);
-	if (!dst && size == 0)
-		return (0);
-	dst_l = ft_strlen(dst);
 	if (size == 0)
 		return (src_l);
+	dst_l = ft_strlen(dst);
 	if (dst_l >= size)
 		return (size + src_l);
 	while ((dst_l + i < size - 1) && src[i] != '\0')

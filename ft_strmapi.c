@@ -19,7 +19,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	int		size;
 
 	size = 0;
-	if (!s)
+	if (!s || !f)
 		return (NULL);
 	while (s[size])
 		size++;

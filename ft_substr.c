@@ -15,7 +15,7 @@
 char	*alloc(char const *s, unsigned int start, size_t len)
 {
 	char	*res;
-	int		s_len;
+	size_t	s_len;
 
 	if (!s)
 		return (NULL);

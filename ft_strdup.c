@@ -15,12 +15,10 @@
 char	*ft_strdup(char *src)
 {
 	char	*res;
-	int		src_len;
-	int		i;
+	size_t	src_len;
+	size_t	i;
 
-	src_len = 0;
-	while (src[src_len])
-		src_len++;
+	src_len = ft_strlen(src);
 	res = (char *)malloc(src_len + 1);
 	if (!res)
 		return (NULL);

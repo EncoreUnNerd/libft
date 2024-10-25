@@ -11,14 +11,15 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*res;
 	int		i;
 	int		l;
-	int		s1_len;
-	int		s2_len;
+	size_t	s1_len;
+	size_t	s2_len;
 
 	i = 0;
 	l = 0;

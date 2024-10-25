@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	long	i;
+	size_t	i;
 
 	i = 0;
 	while (i < n)

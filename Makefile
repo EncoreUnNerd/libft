@@ -22,10 +22,10 @@ $(NAME) : $(OBJS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS) $(NAME)
+	rm -f $(OBJS)
 
 fclean: clean
-	rm -f *.d
+	rm -f $(NAME)
 
 re: fclean all
 

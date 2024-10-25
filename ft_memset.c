@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *ptr, int value, size_t n)
 {
-	long	i;
+	size_t	i;
 
 	i = 0;
 	while (i < n)
