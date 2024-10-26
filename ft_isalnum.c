@@ -17,5 +17,5 @@ int	ft_isalnum(int l)
 	int	verif1;
 
 	verif1 = (l >= 'a' && l <= 'z') || (l >= 'A' && l <= 'Z');
-	return (verif1 || l >= '0' && l <= '9');
+	return (verif1 || (l >= '0' && l <= '9'));
 }

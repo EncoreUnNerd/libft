@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 
 char	*alloc(char const *s, unsigned int start, size_t len)
 {
@@ -37,7 +38,7 @@ char	*alloc(char const *s, unsigned int start, size_t len)
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*res;
-	int		i;
+	size_t	i;
 
 	i = 0;
 	res = alloc(s, start, len);
