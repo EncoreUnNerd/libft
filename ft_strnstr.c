@@ -35,7 +35,3 @@ char	*ft_strnstr(const char *big, const char *little, size_t n)
 	}
 	return (NULL);
 }
-// int main()
-// {
-// 	ft_strnstr("test de fou", "ddasfsdf", 0);
-// }
